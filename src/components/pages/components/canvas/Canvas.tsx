@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
-import { Selector } from '~/store/hooks';
+import { Selector } from '~/store/hooks/hooks';
+import { imageSelector } from '~/store/selectors/imageSelector';
+import { textSelector } from '~/store/selectors/textSelector';
 
 import { CanvasMain } from './canvasStyles';
 
@@ -10,8 +12,8 @@ export const Canvas = () => {
         event.preventDefault();
     };
 
-    const state = Selector((state) => state.images.images);
-    const stateText = Selector((state) => state.images.texts);
+    const state = Selector(imageSelector);
+    const stateText = Selector(textSelector);
     const lastText = stateText.slice(-1);
     const lastItem = state.slice(-1);
     const source = lastItem[0].image.src.split('/').reverse()[0];

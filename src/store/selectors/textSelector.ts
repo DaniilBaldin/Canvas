@@ -1,3 +1,7 @@
+import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from '..';
 
-export const textSelector = (state: RootState) => state.images.texts;
+export const textSelector = createSelector(
+    (state: RootState) => state.images.texts,
+    (items) => items,
+);

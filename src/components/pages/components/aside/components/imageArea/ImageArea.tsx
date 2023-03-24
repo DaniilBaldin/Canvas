@@ -1,6 +1,6 @@
 import React, { DragEventHandler, useEffect, useState } from 'react';
 
-import { Dispatch } from '~/store/hooks';
+import { Dispatch } from '~/store/hooks/hooks';
 import { addImage } from '~/store/reducers/imageReducer';
 
 import { Arts } from '~/utils/arts';

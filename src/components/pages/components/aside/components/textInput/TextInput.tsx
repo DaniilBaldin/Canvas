@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Dispatch } from '~/store/hooks';
+import { Dispatch } from '~/store/hooks/hooks';
 import { addText } from '~/store/reducers/imageReducer';
 
 import { Form, Label, LabelText, Input, Button } from './textInputStyles';
