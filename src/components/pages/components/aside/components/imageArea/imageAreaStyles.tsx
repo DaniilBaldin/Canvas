@@ -26,4 +26,8 @@ export const Image = styled.img`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    :hover {
+        cursor: move;
+    }
 `;

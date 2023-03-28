@@ -15,6 +15,8 @@ interface Image {
 
 type imageInfo = {
     src: string;
+    x: number;
+    y: number;
 };
 
 export const ImageArea = () => {
@@ -22,6 +24,8 @@ export const ImageArea = () => {
 
     const [info, setInfo] = useState<imageInfo>({
         src: '',
+        x: 0,
+        y: 0,
     });
 
     const handleDrag: DragEventHandler<HTMLImageElement> = (e) => {
@@ -30,9 +34,12 @@ export const ImageArea = () => {
         if (!e) {
             return;
         }
-        if (e.type === 'drag') {
+        if (e.type === 'dragend') {
+            console.log(e);
             const imageInfo: imageInfo = {
                 src: (e.target as HTMLImageElement).src,
+                x: e.pageX,
+                y: e.pageY,
             };
             setInfo(imageInfo);
         }
@@ -48,13 +55,13 @@ export const ImageArea = () => {
             <Images>
                 {Arts.map((e: Image) => (
                     <Image
-                        onDrag={handleDrag}
                         key={e.index}
                         src={e.src}
                         alt={e.alt}
                         width={150}
                         height={150}
                         draggable="true"
+                        onDragEnd={handleDrag}
                     />
                 ))}
             </Images>

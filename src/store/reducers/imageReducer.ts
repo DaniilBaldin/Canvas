@@ -2,6 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type Image = {
     src: string;
+    x: number;
+    y: number;
 };
 
 type Text = {
@@ -26,6 +28,8 @@ const initialImage: InitState = {
         {
             image: {
                 src: '',
+                x: 0,
+                y: 0,
             },
         },
     ],

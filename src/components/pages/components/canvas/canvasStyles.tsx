@@ -10,4 +10,12 @@ export const CanvasMain = styled.canvas`
     right: 30%;
     bottom: 20%;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.2);
+
+    :hover {
+        cursor: pointer;
+    }
+
+    :active {
+        cursor: move;
+    }
 `;
